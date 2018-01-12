@@ -9,12 +9,9 @@ var answerOne = prompt('Was I born in the USA?').toUpperCase();
 console.log('Question 1');
 console.log(answerOne);
 
+
+
 /*
-var answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase;
-console.log('Question 2');
-console.log(answerTwo);
-
-
 var answerThree = prompt('Have I ever been to Antartica?').toUpperCase;
 console.log('Question 3');
 console.log(answerThree);
@@ -49,7 +46,6 @@ if (answerOne === 'YES') {
             alert('Yep! Good job ' + guestName + '! Lets try another one.');
         }
     }
-
 } else {
     /*
     alert('Please answer the question with a YES or a NO.');
@@ -58,37 +54,34 @@ if (answerOne === 'YES') {
     while (answerOne !== 'YES' || answerOne === 'NO') {
         answerOne = prompt('Was I born in the USA?').toUpperCase();
     }
-
 }
-   
+
+
+var answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase;
+console.log('Question 2');
+console.log(answerTwo);
+
 if (answerTwo === 'YES') {
 
-    alert('Yep! Good job ' + guestName + '! Lets try another one.');
+    alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
     console.log(guestName + ' got it right!');
 
 } else if (answerTwo === 'NO'){
-    /*
-    alert('Nope! Try again ' + guestName + '!');
-    console.log(guestName + ' got it wrong.');
-    */
-    
     while (answerTwo !== 'YES' || answerTwo === 'NO'){
         alert('Nope! Try again ' + guestName + '!');
-        answerTwo = prompt('Was I born in the USA?').toUpperCase();
-        console.log(guestName + ' got it wrong AGAIN.');
+        answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
+        console.log(guestName + ' got Question 2 wrong AGAIN.');
 
         if (answerTwo === 'YES')  {
-            alert('Yep! Good job ' + guestName + '! Lets try another one.');
+            alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
         }
     }
-
 } else {
     /*
     alert('Please answer the question with a YES or a NO.');
     console.log(guestName + ' didn\'t answer the question correctly');
     */
     while (answerTwo !== 'YES' || answerTwo === 'NO') {
-        answerTwo = prompt('Was I born in the USA?').toUpperCase();
+        answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
     }
-
 }
