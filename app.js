@@ -5,6 +5,7 @@ console.log('please enter your name');
 alert('Hello ' + guestName + '! Please answer the following 5 questions of my guessing game with a YES or a NO!');
 console.log(guestName);
 
+
 /***********************   QUESTION ONE  ************************/
 
 var answerOne = prompt('Was I born in the USA?').toUpperCase();
@@ -25,7 +26,7 @@ if (answerOne === 'YES') {
     }
 } else {
     while (answerOne !== 'YES' || answerOne === 'NO') {
-        answerOne = prompt('Was I born in the USA?').toUpperCase();
+        answerOne = prompt('Try again! Was I born in the USA?').toUpperCase();
         if (answerOne === 'YES')  {
             alert('Yep! Good job ' + guestName + '! Lets try another one.');
             console.log(guestName + ' got Question 1 right after giving an invalid response first.');
@@ -53,8 +54,8 @@ if (answerTwo === 'YES') {
     }
 } else {
     while (answerTwo !== 'YES' || answerTwo === 'NO') {
-        answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
-        if (answerTwo === 'YES')  {
+        answerTwo = prompt('Nah, try it again! Has it ever hailed in Saudi Arabia?').toUpperCase();
+        if (answerTwo === 'YES') {
             alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
             console.log(guestName + ' got Question 2 right after giving an invalid response first.');
         }
@@ -73,16 +74,16 @@ if (answerThree === 'NO') {
 } else if (answerThree === 'YES'){
     while (answerThree !== 'NO' || answerThree === 'YES'){
         alert('Nope! Give it another go ' + guestName + '!');
-        answerTwo = prompt('Do I hate pizza').toUpperCase();
+        answerThree = prompt('Do I hate pizza').toUpperCase();
         console.log(guestName + ' got Question 2 wrong AGAIN.');
-        if (answerThree === 'NO')  {
+        if (answerThree === 'NO') {
             alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
         }
     }
 } else {
     while (answerThree !== 'NO' || answerThree === 'YES') {
         answerThree = prompt('Try again' + userName + 'Do I hate pizza?').toUpperCase();
-        if (answerThree === 'NO')  {
+        if (answerThree === 'NO') {
             alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
             console.log(guestName + ' got Question 3 right after giving an invalid response first.');
         }
@@ -148,4 +149,8 @@ if (answerFive === 'YES') {
     }
 }
 
-alert('So lets recap ' + userName + '. ' + answerOne + ' I was born indeed born in the USA. Has it ever hailed in Saudi? You wouldn\' believe it but ' + answerTwo + ' its hailed twice. So now, do I hate Pizza? ' + answerThree + ', of course not you\'d have to be nuts to. Have I ever tried to put a ring on it? ' + answerFour +', but almost! Lastly, do i have a wild dog from Saudi? The answer is ' + answerFive + ' and she\'s a sweety pie! Thanks a bunch for playing my guessing game and please enjoy checking out my About page!');
+/*********************** PARAGRAPH WITH ALL RESPONSES AT END OF GAME ************************/
+
+/*
+alert('So lets recap ' + userName + '. ' + answerOne + ' I was indeed born in the USA. Has it ever hailed in Saudi? You wouldn\' believe it but ' + answerTwo + ' its hailed twice. So now, do I hate Pizza? ' + answerThree + ', of course not you\'d have to be nuts to. Have I ever tried to put a ring on it? ' + answerFour +', but almost! Lastly, do i have a wild dog from Saudi? The answer is ' + answerFive + ' and she\'s a sweety pie! Thanks a bunch for playing my guessing game and please enjoy checking out my About page!');
+*/

@@ -1,7 +1,81 @@
 * {
     box-sizing:border-box;
 }
-
+body {
+    font-family: sans-serif;
+    background-color: #3B3B3B;
+    color: #FFFFFF;
+    padding:0;
+    margin:0;
+}
 h1 {
     color:green;
+}
+h2 {
+    font-family:sans-serif;
+}
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #1A1C1D;
+}
+footer {
+    display: flex;
+    align-items: center;
+    background-color: #1A1C1D;
+}
+ul {
+    list-style: none;
+}
+nav ul {
+    display:flex;
+    margin:0;
+    padding:0;
+}
+footer ul {
+    display:flex;
+    margin:0;
+    padding:0;
+}
+nav ul li a:hover {
+    color: #7AECBD; 
+    font-weight:bold;
+    background: blue;
+}
+footer ul li a:hover {
+    color: #7AECBD; 
+    font-weight:bold;
+    background: blue;
+}
+a {
+    text-decoration: none;
+    color:white;
+    padding:20px;
+    display: inline-block;
+}
+.infoContainer {
+    display:flex;
+    justify-content: space-around;
+    text-align: center; 
+}
+.bioContainer {
+    border: 1px solid white;
+}
+.eduContainer {
+    border: 1px solid white;
+    width:50%;
+}
+.expContainer {
+    border: 1px solid white;
+    width:50%
+}
+.goalContainer {
+    border: 1px solid white;
+}
+
+@media (max-width : 600px) {
+    .infoContainer {
+        justify-content: space-around;
+        text-align: center; 
+    }
 }
