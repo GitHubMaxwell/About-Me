@@ -2,27 +2,31 @@
     box-sizing:border-box;
 }
 body {
-    font-family: sans-serif;
-    background-color: #3B3B3B;
+    font-family: 'Quicksand', sans-serif;
     color: #FFFFFF;
     padding:0;
     margin:0;
+    height:100%;
 }
-h1 {
-    color:green;
-}
+h1:hover {
+    transform: rotate(-5deg);
+    transform-origin: 1 100%;
+    transition: transform 0.2s ease-out;
+  }
 h2 {
-    font-family:sans-serif;
+    font-size: 50px;
 }
 nav {
     display: flex;
     align-items: center;
     background-color: #1A1C1D;
+    font-size:15px;
 }
 footer {
     display: flex;
     align-items: center;
     background-color: #1A1C1D;
+    font-size:15px;
 }
 ul {
     list-style: none;
@@ -36,6 +40,12 @@ footer ul {
     display:flex;
     margin:0;
     padding:0;
+}
+nav ul li {
+    border:2px solid white;
+}
+footer ul li {
+    border:2px solid white;
 }
 nav ul li a:hover {
     color: #7AECBD; 
@@ -52,30 +62,70 @@ a {
     color:white;
     padding:20px;
     display: inline-block;
+    text-align: left;
+}
+.imgThumb {
+    width:200px;
+    height:100px;
+}
+.aboutContainer {
+    font-size:80px;
+    font-weight:700;
+    color:black;
 }
 .infoContainer {
     display:flex;
     justify-content: space-around;
     text-align: center; 
+    padding:10px;
+   
 }
 .bioContainer {
     border: 1px solid white;
+    padding:10px;
+    background-color: #F6BDC5;
+    color:black;
 }
 .eduContainer {
-    border: 1px solid white;
     width:50%;
+    padding:10px;
+    background-color: #71CCFD;
 }
 .expContainer {
-    border: 1px solid white;
-    width:50%
+    width:50%;
+    padding:10px;
+    background-color: #86D4FD;
 }
 .goalContainer {
     border: 1px solid white;
+    background-color:#D5B5FD;
+    color: black;
+    padding-left:10%;
+    display:flex;
 }
-
-@media (max-width : 600px) {
+.goalContainer ul {
+    margin-left:auto;
+    padding-right:200px;
+    padding-top:40px;
+}
+.goalContainer h2 {
+    transform: rotate(-20deg);
+    transform-origin: 1 100%;
+    font-size: 60px;
+}
+.pContainer {
+    width:60%;
+}
+@media (max-width : 768px) {
     .infoContainer {
+        display: block;
         justify-content: space-around;
         text-align: center; 
+    }
+    .eduContainer {
+        width:100%;
+    }
+    .expContainer {
+        width:100%
     }
 }

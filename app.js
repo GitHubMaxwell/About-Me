@@ -151,6 +151,4 @@ if (answerFive === 'YES') {
 
 /*********************** PARAGRAPH WITH ALL RESPONSES AT END OF GAME ************************/
 
-/*
-alert('So lets recap ' + userName + '. ' + answerOne + ' I was indeed born in the USA. Has it ever hailed in Saudi? You wouldn\' believe it but ' + answerTwo + ' its hailed twice. So now, do I hate Pizza? ' + answerThree + ', of course not you\'d have to be nuts to. Have I ever tried to put a ring on it? ' + answerFour +', but almost! Lastly, do i have a wild dog from Saudi? The answer is ' + answerFive + ' and she\'s a sweety pie! Thanks a bunch for playing my guessing game and please enjoy checking out my About page!');
-*/
+var alert = alert('So lets recap ' + userName + '. ' + answerOne + ' I was indeed born in the USA. Has it ever hailed in Saudi? You wouldn\' believe it but ' + answerTwo + ' its hailed twice. So now, do I hate Pizza? ' + answerThree + ', of course not you\'d have to be nuts to. Have I ever tried to put a ring on it? ' + answerFour +', but almost! Lastly, do i have a wild dog from Saudi? The answer is ' + answerFive + ' and she\'s a sweety pie! Thanks a bunch for playing my guessing game and please enjoy checking out my About page!');
