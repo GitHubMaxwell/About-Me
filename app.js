@@ -1,33 +1,33 @@
 'use strict';
 
 var guestName = prompt('please enter your name');
-console.log('please enter your name');
 alert('Hello ' + guestName + '! Please answer the following 5 questions of my guessing game with a YES or a NO!');
-console.log(guestName);
+console.log('Guest\'s name = ' + guestName);
 
 
 /***********************   QUESTION ONE  ************************/
 
 var answerOne = prompt('Was I born in the USA?').toUpperCase();
 console.log('Question 1');
-console.log(answerOne);
+console.log('Answer One = ' + answerOne);
 
-if (answerOne === 'YES') {
+if (answerOne === 'YES' || answerOne === 'Y') {
     alert('Yep! Good job ' + guestName + '! Lets try another one.');
-    console.log(guestName + ' got it right!');
-} else if (answerOne === 'NO'){
-    while (answerOne !== 'YES' || answerOne === 'NO'){
+    console.log(guestName + ' got Question One right on the first try');
+} else if (answerOne === 'NO' || answerOne === 'N'){
+    while ((answerOne !== 'YES' || answerOne !== 'Y') || (answerOne === 'NO' || answerOne === 'N')) {
         alert('Nope! Try again ' + guestName + '!');
         answerOne = prompt('Was I born in the USA?').toUpperCase();
         console.log(guestName + ' got it wrong AGAIN.');
-        if (answerOne === 'YES')  {
+        if (answerOne === 'YES' || answerOne === 'Y') {
             alert('Yep! Good job ' + guestName + '! Lets try another one.');
+            console.log(guestName + ' got Question 1 right after giving the incorrect response NO first.');
         }
     }
 } else {
-    while (answerOne !== 'YES' || answerOne === 'NO') {
+    while (answerOne !== 'YES' || answerOne === 'NO' || answerOne === 'N') {
         answerOne = prompt('Try again! Was I born in the USA?').toUpperCase();
-        if (answerOne === 'YES')  {
+        if (answerOne === 'YES' || answerOne === 'Y')  {
             alert('Yep! Good job ' + guestName + '! Lets try another one.');
             console.log(guestName + ' got Question 1 right after giving an invalid response first.');
         }
@@ -38,24 +38,25 @@ if (answerOne === 'YES') {
 
 var answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
 console.log('Question 2');
-console.log(answerTwo);
+console.log('Answer Two = ' + answerTwo);
 
-if (answerTwo === 'YES') {
+if (answerTwo === 'YES' || answerTwo === 'Y') {
     alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
-    console.log(guestName + ' got it right!');
-} else if (answerTwo === 'NO'){
-    while (answerTwo !== 'YES' || answerTwo === 'NO'){
+    console.log(guestName + ' got Question Two right on the first try');
+} else if (answerTwo === 'NO' || answerTwo === 'N'){
+    while (answerTwo !== 'YES' || answerTwo === 'NO' || answerTwo === 'N'){
         alert('Nope! Try again ' + guestName + '!');
         answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
         console.log(guestName + ' got Question 2 wrong AGAIN.');
-        if (answerTwo === 'YES')  {
+        if (answerTwo === 'YES' || answerTwo === 'Y')  {
             alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
+            console.log(guestName + ' got Question 2 right after giving the incorrect response NO first.');
         }
     }
 } else {
-    while (answerTwo !== 'YES' || answerTwo === 'NO') {
+    while (answerTwo !== 'YES' || answerTwo === 'NO' || answerTwo === 'N') {
         answerTwo = prompt('Nah, try it again! Has it ever hailed in Saudi Arabia?').toUpperCase();
-        if (answerTwo === 'YES') {
+        if (answerTwo === 'YES' || answerTwo === 'Y') {
             alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
             console.log(guestName + ' got Question 2 right after giving an invalid response first.');
         }
@@ -66,24 +67,25 @@ if (answerTwo === 'YES') {
 
 var answerThree = prompt('Do I hate pizza?').toUpperCase();
 console.log('Question 3');
-console.log(answerThree);
+console.log('Answer Three = ' + answerThree);
 
-if (answerThree === 'NO') {
+if (answerThree === 'NO' || answerThree === 'N') {
     alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
-    console.log(guestName + ' got it right!');
-} else if (answerThree === 'YES'){
-    while (answerThree !== 'NO' || answerThree === 'YES'){
+    console.log(guestName + ' got Question Three right on the first try');
+} else if (answerThree === 'YES' || answerThree === 'Y'){
+    while (answerThree !== 'NO' || answerThree === 'YES' || answerThree === 'Y'){
         alert('Nope! Give it another go ' + guestName + '!');
         answerThree = prompt('Do I hate pizza').toUpperCase();
         console.log(guestName + ' got Question 2 wrong AGAIN.');
-        if (answerThree === 'NO') {
+        if (answerThree === 'NO' || answerThree === 'N') {
             alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
+            console.log(guestName + ' got Question 3 right after giving an incorrect response first.');
         }
     }
 } else {
     while (answerThree !== 'NO' || answerThree === 'YES') {
         answerThree = prompt('Try again' + userName + 'Do I hate pizza?').toUpperCase();
-        if (answerThree === 'NO') {
+        if (answerThree === 'NO' || answerThree === 'N') {
             alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
             console.log(guestName + ' got Question 3 right after giving an invalid response first.');
         }
@@ -94,26 +96,26 @@ if (answerThree === 'NO') {
 
 var answerFour = prompt('Have I been married?').toUpperCase();
 console.log('Question 4');
-console.log(answerFour);
+console.log('Answer Four = ' + answerFour);
 
-if (answerFour === 'NO') {
+if (answerFour === 'NO' || answerFour === 'N') {
     alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
-    console.log(guestName + ' got it right!');
-} else if (answerFour === 'YES'){
-    while (answerFour !== 'NO' || answerFour === 'YES'){
+    console.log(guestName + ' got Question Four right on the first try');
+} else if (answerFour === 'YES' || answerFour === 'Y'){
+    while (answerFour !== 'NO' || answerFour === 'YES' || answerFour === 'Y'){
         alert('Nope! Try again ' + guestName + '!');
         answerFour = prompt('Have I been married?').toUpperCase();
         console.log(guestName + ' got Question 4 wrong AGAIN.');
-        if (answerFour === 'NO')  {
+        if (answerFour === 'NO' || answerFour === 'N')  {
             alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
             console.log(guestName + ' got Question 4 right after saying no first.');
         }
     }
 } else {
-    while (answerFour !== 'NO' || answerFour === 'YES') {
+    while (answerFour !== 'NO' || answerFour === 'YES' || answerFour === 'Y') {
         answerFour = prompt('Good try but that\'s a negative ' + guestName + '. Give it another try. Have I been married?').toUpperCase();
         console.log(guestName + ' got Question 4 right after saying an invalid answer first.');
-        if (answerFour === 'YES')  {
+        if (answerFour === 'NO' || answerFour === 'N')  {
             alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
             console.log(guestName + ' got Question 4 right after giving an invalid response first.');
         }
@@ -124,25 +126,26 @@ if (answerFour === 'NO') {
 
 var answerFive = prompt('Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
 console.log('Question 5');
-console.log(answerFive); 
+console.log('Answer Five = ' + answerFive); 
 
-if (answerFive === 'YES') {
+if (answerFive === 'YES' || answerFive === 'Y') {
     alert('You\'re right ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki. She\'s 15 if you can believe that!');
-    console.log(guestName + ' got Question 5 right!');
+    console.log(guestName + ' got Question 5 right on the first try');
 
-} else if (answerFive === 'NO'){
-    while (answerFive !== 'YES' || answerFive === 'NO'){
+} else if (answerFive === 'NO' || answerFive === 'N') {
+    while (answerFive !== 'YES' || answerFive === 'NO' || answerFive === 'N') {
         alert('Nope! Try again ' + guestName + '!');
         answerFive = prompt('Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
         console.log(guestName + ' got Question 5 wrong.');
-        if (answerFive === 'YES')  {
+        if (answerFive === 'YES' || answerFive === 'Y') {
             alert('You bet ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki.');
+            console.log(guestName + ' got Question 5 right after giving the incorrect response NO first.');
         }
     }
 } else {
-    while (answerFive !== 'YES' || answerFive === 'NO') {
+    while (answerFive !== 'YES' || answerFive === 'NO' || answerFive === 'N') {
         answerFive = prompt('Try again! Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
-        if (answerFive === 'YES')  {
+        if (answerFive === 'YES' || answerFive === 'Y') {
             alert('You bet ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki.');
             console.log(guestName + ' got Question 5 right after giving an invalid response first.');
         }
