@@ -72,6 +72,8 @@ a {
     font-size:80px;
     font-weight:700;
     color:black;
+    display:flex;
+    justify-content: center;
 }
 .infoContainer {
     display:flex;
