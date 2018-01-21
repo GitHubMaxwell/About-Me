@@ -4,154 +4,120 @@ var guestName = prompt('please enter your name');
 alert('Hello ' + guestName + '! Please answer the following 5 questions of my guessing game with a YES or a NO!');
 console.log('Guest\'s name = ' + guestName);
 
+var gameArray = [['Was I born in the USA?', 'Has it ever hailed in Saudi Arabia?', 'Do I hate pizza?', 'Have I been married?', 'Do I have an Saudi Arabian wild dog as a pet?'], ['YES','YES','NO','NO','YES'],['Nope, try again ' + guestName, 'You\'re right ' + guestName + '! Let\'s move on to the next one.']];
 
-/***********************   QUESTION ONE  ************************/
+var userAnswerArray = [];
 
-var answerOne = prompt('Was I born in the USA?').toUpperCase();
-console.log('Question 1');
-console.log('Answer One = ' + answerOne);
+var keepScore;
+///////////////////// QUESTION 1-5 (MULTI-Dimensional array above) ////////////////////////////////////
 
-if (answerOne === 'YES') {
-    alert('Yep! Good job ' + guestName + '! Lets try another one.');
-    console.log(guestName + ' got Question One right on the first try');
-} else if (answerOne === 'NO'){
-    while (answerOne !== 'YES' || answerOne === 'NO') {
-        alert('Nope! Try again ' + guestName + '!');
-        answerOne = prompt('Was I born in the USA?').toUpperCase();
-        console.log(guestName + ' got it wrong AGAIN.');
-        if (answerOne === 'YES') {
-            alert('Yep! Good job ' + guestName + '! Lets try another one.');
-            console.log(guestName + ' got Question 1 right after giving the incorrect response NO first.');
+function gameFunction(){
+
+  for (var i = 0; i < 5 ; i++) {
+    //my prompt that points to the array doesnt work
+    //i had parenthesis around the array brackets and the linter was thinking it was a function (gameArray([0][i]))
+    console.log((gameArray[0][i]));
+    var userAnswer = prompt(gameArray[0][i]).toUpperCase();
+    userAnswerArray.push(userAnswer);
+    console.log(userAnswerArray);
+    // have to push the results of the prompt into the userAnswerArray
+    console.log('Question ' + i);
+    console.log('Answer ' + i + ' = ' + userAnswerArray[i]);
+
+    if ((userAnswerArray[i]) === (gameArray[1][i])) {
+      alert(gameArray[2][1]);
+      console.log(guestName + ' got Question ' + (i+1) + ' right on the first try');
+      keepScore++;
+    } else if ((userAnswerArray[i]) !== (gameArray[1][i])) {
+      while ((userAnswerArray[i]) !== (gameArray[1][i])) {
+        alert(gameArray[2][0]);
+        userAnswerArray[i] = prompt(gameArray[0][i]).toUpperCase();
+        console.log(guestName + ' got Question ' + (i+1) + ' wrong AGAIN.');
+        if ((userAnswerArray[i]) === (gameArray[1][i])) {
+          alert(gameArray[2][1]);
+          console.log(guestName + ' got Question' + (i+1) + 'right after saying no first.');
+          keepScore--;
         }
-    }
-} else {
-    while (answerOne !== 'YES' || answerOne === 'NO') {
-        answerOne = prompt('Try again! Was I born in the USA?').toUpperCase();
-        if (answerOne === 'YES')  {
-            alert('Yep! Good job ' + guestName + '! Lets try another one.');
-            console.log(guestName + ' got Question 1 right after giving an invalid response first.');
+      }
+    } else {
+      while ((userAnswerArray[i]) !== (gameArray[1][i])) {
+        alert(gameArray[2][0]);
+        userAnswerArray[i] = prompt(gameArray[0][i]).toUpperCase();
+        console.log(guestName + ' got Question ' + (i+1) + ' right after saying an invalid answer first.');
+        if ((userAnswerArray[i]) === (gameArray[1][i])) {
+          alert(gameArray[2][1]);
+          console.log(guestName + ' got Question ' + (i+1) + 'right after giving an invalid response first.');
+          keepScore--;
         }
+      }
     }
+  }
+  console.log('end of multidimensional array');
 }
+gameFunction();
 
-/*********************** QUESTION TWO ************************/
+///////////////////// QUESTION 6 (WORKS) ////////////////////////////////////
+// i took the random math generator from https://www.w3schools.com/jsref/jsref_random.asp
 
-var answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
-console.log('Question 2');
-console.log('Answer Two = ' + answerTwo);
+function mathGuess() {
+  var rand = Math.floor((Math.random() * 3) + 1); 
+  var answerSix = parseInt(prompt('Give me a number from 1 to 3? ' + rand));
+  console.log(rand);
+  console.log('User guess = ' + answerSix);
 
-if (answerTwo === 'YES') {
-    alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
-    console.log(guestName + ' got Question Two right on the first try');
-} else if (answerTwo === 'NO'){
-    while (answerTwo !== 'YES' || answerTwo === 'NO'){
-        alert('Nope! Try again ' + guestName + '!');
-        answerTwo = prompt('Has it ever hailed in Saudi Arabia?').toUpperCase();
-        console.log(guestName + ' got Question 2 wrong AGAIN.');
-        if (answerTwo === 'YES')  {
-            alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
-            console.log(guestName + ' got Question 2 right after giving the incorrect response NO first.');
-        }
+  for (var k = 0; k < 5; k++) {
+    if (answerSix === rand) {
+      alert('You got it');
+      keepScore++;
+      break;
+    } else if (answerSix !== rand){
+      alert('You got it wrong');
+      answerSix = parseInt(prompt('Give me a number from 1 to 3?' + rand));
+      console.log('You got it wrong AGAIN');
+      console.log('youve missed it ' + (k + 1) + ' times');
+      if (k === 5) {
+        alert('you got it wrong too many times');
+        break;
+      }
     }
-} else {
-    while (answerTwo !== 'YES' || answerTwo === 'NO') {
-        answerTwo = prompt('Nah, try it again! Has it ever hailed in Saudi Arabia?').toUpperCase();
-        if (answerTwo === 'YES') {
-            alert('Yep! Good job ' + guestName + '! It has hailed in Saudi Arabia.');
-            console.log(guestName + ' got Question 2 right after giving an invalid response first.');
-        }
-    }
+  }
 }
+mathGuess();
+///////////////////// QUESTION 7 (DOESN'T WORK) ////////////////////////////////////
+////////////used a lot of josh mcclung's code/////////////////////
 
-/*********************** QUESTION THREE ************************/
+function favFoods(){
+  var favFood = ['CHIPS', 'TACOS', 'BURGERS', 'PIZZA', 'SUSHI'];
+  var answerSeven = prompt('Guess what one of my favorite foods is?').toUpperCase();
+  console.log('Question 7');
+  console.log('Answer 7 = ' + answerSeven);
 
-var answerThree = prompt('Do I hate pizza?').toUpperCase();
-console.log('Question 3');
-console.log('Answer Three = ' + answerThree);
+  /*
 
-if (answerThree === 'NO') {
-    alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
-    console.log(guestName + ' got Question Three right on the first try');
-} else if (answerThree === 'YES'){
-    while (answerThree !== 'NO' || answerThree === 'YES'){
-        alert('Nope! Give it another go ' + guestName + '!');
-        answerThree = prompt('Do I hate pizza').toUpperCase();
-        console.log(guestName + ' got Question 2 wrong AGAIN.');
-        if (answerThree === 'NO') {
-            alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
-            console.log(guestName + ' got Question 3 right after giving an incorrect response first.');
-        }
-    }
-} else {
-    while (answerThree !== 'NO' || answerThree === 'YES') {
-        answerThree = prompt('Try again' + userName + 'Do I hate pizza?').toUpperCase();
-        if (answerThree === 'NO') {
-            alert('You\'re absolutely right ' + guestName + '! Who hates pizza that\'s what I want to know!?.');
-            console.log(guestName + ' got Question 3 right after giving an invalid response first.');
-        }
-    }
+  if (answerSeven === favFood[j]){
+    console.log('you got it right');
+    favFood.splice(j, 1); //removes the correctly guessed item in the array before displaying it
+    alert('You got it! I do like ' + answerSeven.toUpperCase + '. I also like ' + favFood);
+  } else if (answerSeven !== favFood[j]) {
+    console.log('user answer doesnt match anything in the array');
+    answerSeven = prompt('Nope, take another guess?').toUpperCase();
+  }
+*/
+  //for (var j = 0; j < favFood.length; j++) {
+
+  var j = 0;
+  while (j < 5){
+    console.log('checking user answer against array position ' + j);
+    j++;
+    for (var k = 0; k < favFood; k++)
+      if (answerSeven === favFood[k]){
+        console.log('you got it right');
+        favFood.splice(j, 1); //removes the correctly guessed item from the array before displaying the rest of the array in the below alert
+        alert('You got it! I do like ' + answerSeven.toUpperCase + '. I also like ' + favFood);
+        keepScore++;
+      }
+  }
 }
-
-/*********************** QUESTION FOUR ************************/
-
-var answerFour = prompt('Have I been married?').toUpperCase();
-console.log('Question 4');
-console.log('Answer Four = ' + answerFour);
-
-if (answerFour === 'NO') {
-    alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
-    console.log(guestName + ' got Question Four right on the first try');
-} else if (answerFour === 'YES'){
-    while (answerFour !== 'NO' || answerFour === 'YES'){
-        alert('Nope! Try again ' + guestName + '!');
-        answerFour = prompt('Have I been married?').toUpperCase();
-        console.log(guestName + ' got Question 4 wrong AGAIN.');
-        if (answerFour === 'NO')  {
-            alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
-            console.log(guestName + ' got Question 4 right after saying no first.');
-        }
-    }
-} else {
-    while (answerFour !== 'NO' || answerFour === 'YES') {
-        answerFour = prompt('Good try but that\'s a negative ' + guestName + '. Give it another try. Have I been married?').toUpperCase();
-        console.log(guestName + ' got Question 4 right after saying an invalid answer first.');
-        if (answerFour === 'NO')  {
-            alert('You got it! Good job ' + guestName + '! I have been engaged but never hitched!');
-            console.log(guestName + ' got Question 4 right after giving an invalid response first.');
-        }
-    }
-}
-
-/*********************** QUESTION FIVE ************************/
-
-var answerFive = prompt('Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
-console.log('Question 5');
-console.log('Answer Five = ' + answerFive); 
-
-if (answerFive === 'YES') {
-    alert('You\'re right ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki. She\'s 15 if you can believe that!');
-    console.log(guestName + ' got Question 5 right on the first try');
-
-} else if (answerFive === 'NO') {
-    while (answerFive !== 'YES' || answerFive === 'NO') {
-        alert('Nope! Try again ' + guestName + '!');
-        answerFive = prompt('Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
-        console.log(guestName + ' got Question 5 wrong.');
-        if (answerFive === 'YES') {
-            alert('You bet ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki.');
-            console.log(guestName + ' got Question 5 right after giving the incorrect response NO first.');
-        }
-    }
-} else {
-    while (answerFive !== 'YES' || answerFive === 'NO') {
-        answerFive = prompt('Try again! Do I have an Saudi Arabian wild dog as a pet?').toUpperCase();
-        if (answerFive === 'YES') {
-            alert('You bet ' + guestName + '! Her name is Zoe and she is a Saudi Arabian Saluki.');
-            console.log(guestName + ' got Question 5 right after giving an invalid response first.');
-        }
-    }
-}
-
-/*********************** PARAGRAPH WITH ALL RESPONSES AT END OF GAME ************************/
-
-var alert = alert('So lets recap ' + guestName + '. ' + answerOne + ' I was indeed born in the USA. Has it ever hailed in Saudi? You wouldn\' believe it but ' + answerTwo + ' its hailed twice. So now, do I hate Pizza? ' + answerThree + ', of course not you\'d have to be nuts to. Have I ever tried to put a ring on it? ' + answerFour +', but almost! Lastly, do i have a wild dog from Saudi? The answer is ' + answerFive + ' and she\'s a sweety pie! Thanks a bunch for playing my guessing game and please enjoy checking out my About page!');
+favFoods();
+//}
+alert('So lets recap ' + guestName + '.  You\'re score is ' + keepScore + ' right out of 6 questions.');
